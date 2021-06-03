@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Airline Safety Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" 
+          href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+  </head>
+
+  <body>
+    <h1>Airline Safety Data</h1>
+  	  <table>
+      <tr>
+        <th>INCIDENTS</th>
+        <th>ACCIDENTS</th>
+        <th>FATALITIES</th>
+      </tr>
+      <tr>
+        <td th:text="${incidents}"></td>
+        <td th:text="${accidents}"></td>
+        <td th:text="${fatalities}"></td>
+      </tr>
+    </table>
+  
+    <table style="float: left;">
+      <tr>
+        <th>NAME</th>
+        <th>INCIDENTS</th>
+        <th>ACCIDENTS</th>
+        <th>FATALITIES</th>
+      </tr>
+      <tr th:each="entry : ${#lists.sort(data, incidentsComp)}">
+        <td th:text="${entry.name}"></td>
+        <td th:text="${entry.incidents}"></td>
+        <td th:text="${entry.accidents}"></td>
+        <td th:text="${entry.fatalities}"></td>
+      </tr>
+    </table>
+
+    <table style="float: left;">
+      <tr>
+        <th>NAME</th>
+        <th>INCIDENTS</th>
+        <th>ACCIDENTS</th>
+        <th>FATALITIES</th>
+      </tr>
+      <tr th:each="entry : ${#lists.sort(data, fatalitiesComp)}">
+        <td th:text="${entry.name}"></td>
+        <td th:text="${entry.incidents}"></td>
+        <td th:text="${entry.accidents}"></td>
+        <td th:text="${entry.fatalities}"></td>
+      </tr>
+    </table>
+
+    <table style="float: left;">
+      <tr>
+        <th>NAME</th>
+        <th>RATIO AVAIL_SEATS_KM_WEEK</th>
+      </tr>
+      <tr th:each="entry : ${#lists.sort(data, ratio)}">
+        <td th:text="${entry.name}"></td>
+        <td th:text="${entry.fatalitiesRatio}"></td>
+      </tr>
+    </table>
+  </body>
+</html>
