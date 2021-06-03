@@ -1,6 +1,6 @@
 # Airline Safety
 
-The application computes how safety airlines are. The dataset refers to incidents, accidents, fatalities and avaivlble seats per Km per week during the period 1985-2014. It takes account of only some of the most important airlines.
+The application computes how safety airlines are. The dataset refers to incidents, accidents, fatalities and available seats per Km per week during the period 1985-2014. It takes account of only some of the most important airlines.
 
 The aim of the project is merely for education purposes. The intention behind the project isn't to make some statemets about the safety of a particular airline.
 
